@@ -4,8 +4,7 @@
 
 body {
   font-family: sans-serif;
-  background-color: #6b32e1;
-  color: blue;
+  background-color: black;
 }
 
 img {
@@ -18,8 +17,17 @@ p {
 }
 
 a {
-  color: #000000;
+  color: blue;
   text-decoration: none;
+}
+
+header a:hover {
+  color: white;
+}
+
+a:hover {
+  color: #6b32e1;
+  text-decoration: underline;
 }
 
 small {
@@ -27,10 +35,17 @@ small {
 }
 
 header {
-  background-color: #6b32e1;
-  color: #fff;
+  background-color: black;
+  color: gray;
+  font-size: 1.5rem;
   padding: 3px;
-  height: 26px;
+  height: 3rem;
+}
+
+header a {
+  color: gray;
+  text-decoration: none;
+  margin-left: 2rem;
 }
 
 header > img {

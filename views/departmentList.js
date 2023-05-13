@@ -10,8 +10,8 @@ module.exports = (departments) => {
       <body>
         <div class="news-list">
           <header>
-            Acme Corp: Department Listing |
-            <a href="/departments">Departments</a> |
+            Acme Corp
+            <a href="/departments">Departments</a>
             <a href="/employees">Employees</a>
           </header>
           <div class="news-item">

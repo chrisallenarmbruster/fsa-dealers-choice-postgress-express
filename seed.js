@@ -73,7 +73,6 @@ async function setUpDb() {
   console.log("Database created.")
 
   await createTables()
-
   await seedTables()
 
   console.log("Setup completed")

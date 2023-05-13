@@ -11,8 +11,7 @@ module.exports = (department, employees) => {
       <body>
         <div class="news-list">
           <header>
-            Acme Corp: Department Details for ${department.departmentname} |
-            <a href="/departments">Departments</a> |
+            Acme Corp <a href="/departments">Departments</a>
             <a href="/employees">Employees</a>
           </header>
           <div class="news-item">

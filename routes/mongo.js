@@ -1,3 +1,5 @@
+//future route handler for practice w/ a nosql database
+
 const router = require("express").Router()
 
 router.get("/", (req, res, next) => {

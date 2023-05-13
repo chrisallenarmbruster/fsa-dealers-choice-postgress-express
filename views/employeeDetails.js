@@ -11,9 +11,8 @@ module.exports = (employee) => {
       <body>
         <div class="news-list">
           <header>
-            Acme Corp: Employee Details for ${employee.lastname},
-            ${employee.firstname} |
-            <a href="/departments">Departments</a> |
+            Acme Corp
+            <a href="/departments">Departments</a>
             <a href="/employees">Employees</a>
           </header>
           <div class="news-item">
@@ -28,8 +27,8 @@ module.exports = (employee) => {
             </p>
 
             <p>Job: ${employee.jobtitle}</p>
-            <p>phone: ${employee.phone}</p>
-            <p>email: ${employee.email}</p>
+            <p>Phone: ${employee.phone}</p>
+            <p>Email: ${employee.email}</p>
           </div>
         </div>
       </body>

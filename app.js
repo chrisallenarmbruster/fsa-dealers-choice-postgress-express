@@ -12,6 +12,8 @@ app.use(morgan("dev"))
 app.use(express.static(__dirname + "/public"))
 
 app.use("/", pgRouter)
+
+//future route for practice w/ a nosql database
 app.use("/mongo", mongoRouter)
 
 app.use((err, req, res, next) => {

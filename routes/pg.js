@@ -5,8 +5,7 @@ const departmentDetails = require("../views/departmentDetails.js")
 const employeeList = require("../views/employeeList.js")
 const employeeDetails = require("../views/employeeDetails.js")
 
-//add a root redirect
-
+//root redirect
 router.get("/", (req, res, next) => {
   res.redirect("/departments")
 })
@@ -29,7 +28,6 @@ router.get("/departments/:id", async (req, res, next) => {
       `SELECT * FROM departments WHERE departmentid = $1`,
       [req.params.id]
     )
-
     const employees = await client.query(
       `SELECT * FROM employees WHERE departmentnumber = $1`,
       [department.rows[0].departmentnumber]
