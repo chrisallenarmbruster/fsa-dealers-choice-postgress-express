@@ -1,3 +1,9 @@
+//create and seed a mock HR database of employees and departments
+//Noticed terminal would not return to prompt if I didn't do client.end()
+//Also found out hard way that postgress will lowercase my column names if not quoted,
+//I adjusted for that in the rest of application, but if to do again,
+//I would use snake case rather than camel case.
+
 const { faker } = require("@faker-js/faker")
 const pg = require("pg")
 const _ = require("lodash")
@@ -65,6 +71,7 @@ async function seedTables() {
 }
 
 async function setUpDb() {
+  //had to use a databaseless connection string in order to drop and recreate database if exists
   client = new pg.Client("postgres://localhost")
   await client.connect()
   await client.query(`DROP DATABASE IF EXISTS hr_mock;`)
