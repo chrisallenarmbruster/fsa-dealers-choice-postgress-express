@@ -1,9 +1,11 @@
 const router = require("express").Router()
 const client = require("../db")
-const departmentList = require("../views/departmentList.js")
-const departmentDetails = require("../views/departmentDetails.js")
-const employeeList = require("../views/employeeList.js")
-const employeeDetails = require("../views/employeeDetails.js")
+const {
+  departmentDetails,
+  departmentList,
+  employeeDetails,
+  employeeList,
+} = require("../views")
 
 //root redirect
 router.get("/", (req, res, next) => {
@@ -28,6 +30,8 @@ router.get("/departments/:id", async (req, res, next) => {
       `SELECT * FROM departments WHERE departmentid = $1`,
       [req.params.id]
     )
+
+    //consider making standalone standalone function w/ parameters for reuse
     const employees = await client.query(
       `SELECT * FROM employees WHERE departmentnumber = $1`,
       [department.rows[0].departmentnumber]

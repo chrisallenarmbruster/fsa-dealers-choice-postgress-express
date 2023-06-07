@@ -70,12 +70,12 @@ async function seedTables() {
   console.log("Tables seeded.")
 }
 
-async function setUpDb() {
-  //had to use a databaseless connection string in order to drop and recreate database if exists
+async function setUpDb(dbName) {
+  //have to use a databaseless connection string in order to drop and recreate database if exists
   client = new pg.Client("postgres://localhost")
   await client.connect()
-  await client.query(`DROP DATABASE IF EXISTS hr_mock;`)
-  await client.query(`CREATE DATABASE hr_mock;`)
+  await client.query(`DROP DATABASE IF EXISTS ${dbName};`)
+  await client.query(`CREATE DATABASE ${dbName};`)
   client.end()
   console.log("Database created.")
 
@@ -85,4 +85,4 @@ async function setUpDb() {
   console.log("Setup completed")
 }
 
-setUpDb()
+setUpDb("hr_mock")
